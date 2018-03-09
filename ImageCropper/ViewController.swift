@@ -146,7 +146,7 @@ class ViewController: UIViewController, CroppableImageViewDelegateProtocol, UIIm
             return
         }
         let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self// declare 2 dlegates for assigning
+        cameraPicker.delegate = self
         cameraPicker.sourceType = .camera
         cameraPicker.allowsEditing = false
         present(cameraPicker, animated: true, completion: nil)

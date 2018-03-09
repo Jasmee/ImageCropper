@@ -8,8 +8,6 @@
 
 import UIKit
 
-//---------------------------------------------------------------------------------------------------------
-
 func rectFromStartAndEnd(_ startPoint:CGPoint, endPoint: CGPoint) -> CGRect
 {
     var  top, left, bottom, right: CGFloat;
@@ -23,10 +21,9 @@ func rectFromStartAndEnd(_ startPoint:CGPoint, endPoint: CGPoint) -> CGRect
     return result
 }
 
-//----------------------------------------------------------------------------------------------------------
+
 class CroppableImageView: UIView, CornerpointClientProtocol
 {
-    // MARK: - properties -
     var  imageToCrop: UIImage?
     {
         didSet
@@ -37,15 +34,14 @@ class CroppableImageView: UIView, CornerpointClientProtocol
     }
     
     let viewForImage: UIView
-    var  imageSize: CGSize?
-    var  imageRect: CGRect?
+    var imageSize: CGSize?
+    var imageRect: CGRect?
     var aspect: CGFloat
     var draggingRect: Bool = false
     
     @IBOutlet var  cropDelegate: CroppableImageViewDelegateProtocol?
     let dragger: UIPanGestureRecognizer
     var cornerpoints =  [CornerpointView]()
-    
     
     var startPoint: CGPoint?
     fileprivate var internalCropRect: CGRect?
@@ -87,9 +83,8 @@ class CroppableImageView: UIView, CornerpointClientProtocol
         }
         
     }
-    //-------------------------------------------------------------------------------------------------------
+
     // MARK: - Designated initializer(s)
-    //-------------------------------------------------------------------------------------------------------
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -118,8 +113,7 @@ class CroppableImageView: UIView, CornerpointClientProtocol
         }
         
     }
-    
-    //---------------------------------------------------------------------------------------------------------
+
     // MARK: - UIView methods
     //---------------------------------------------------------------------------------------------------------
     
