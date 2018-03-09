@@ -10,54 +10,87 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Crop Delegate-->
+        <!--Pick Image View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageCropper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PickImageViewController" customModule="ImageCropper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alA-LJ-KYD" customClass="CroppableImageView" customModule="ImageCropper" customModuleProvider="target">
-                                <rect key="frame" x="16" y="50" width="343" height="546"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="cropDelegate" destination="BYZ-38-t0r" id="b3a-Hx-ZsH"/>
-                                </connections>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-J5-IBs">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Crop"/>
-                                <connections>
-                                    <action selector="cropButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1f-FN-FUi"/>
-                                </connections>
-                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spr-jI-9Do">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Pick Image" id="GnU-aI-jq2">
+                                        <connections>
+                                            <action selector="pickImageTapped:" destination="BYZ-38-t0r" id="mLV-fl-zBd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Crop Ratio" id="j6M-XM-ymL">
+                                        <connections>
+                                            <action selector="cropRatioTapped:" destination="BYZ-38-t0r" id="PeS-9m-awr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Crop" id="jC9-cy-QQp">
+                                        <connections>
+                                            <action selector="cropTapped:" destination="BYZ-38-t0r" id="Z80-zX-G82"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5mV-KR-akb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="Dss-Jc-0Py">
-                            <connections>
-                                <action selector="openCamera:" destination="BYZ-38-t0r" id="eRu-Wu-GGm"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Photos" id="dHS-ha-OUs">
-                            <connections>
-                                <action selector="openPhotoLibrary:" destination="BYZ-38-t0r" id="L5L-k5-c3c"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="5mV-KR-akb"/>
                     <connections>
-                        <outlet property="cropButton" destination="Pbr-J5-IBs" id="Qmj-kD-b5D"/>
-                        <outlet property="cropView" destination="alA-LJ-KYD" id="BlO-DE-rPq"/>
+                        <segue destination="YfF-gV-ul3" kind="show" identifier="showCroppedImage" id="Mcb-dW-4y6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="132.68365817091455"/>
+            <point key="canvasLocation" x="502" y="133"/>
+        </scene>
+        <!--Cropped Image View Controller-->
+        <scene sceneID="Muj-RP-Aed">
+            <objects>
+                <viewController id="YfF-gV-ul3" customClass="CroppedImageViewController" customModule="ImageCropper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hjL-GK-0u6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58w-7F-Vc7">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Crop Again" id="bjf-0p-jib">
+                                        <connections>
+                                            <action selector="cropAgainTapped:" destination="YfF-gV-ul3" id="DDu-ic-8wB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Save" id="uDm-bW-bqA">
+                                        <connections>
+                                            <action selector="SaveToAlbumWithSender:" destination="YfF-gV-ul3" id="ZeC-Fu-PBU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RvO-8R-58o">
+                                <rect key="frame" x="76" y="203" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hU5-g2-XRc"/>
+                    </view>
+                    <connections>
+                        <outlet property="croppedImageView" destination="RvO-8R-58o" id="0fg-Oo-NeT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJ4-vR-Mlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vWU-WW-332">
