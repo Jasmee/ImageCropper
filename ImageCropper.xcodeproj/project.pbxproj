@@ -8,24 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0F145E9320518BA900D24D24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F145E9220518BA900D24D24 /* AppDelegate.swift */; };
-		0F145E9520518BA900D24D24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F145E9420518BA900D24D24 /* ViewController.swift */; };
+		0F145E9520518BA900D24D24 /* InstagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F145E9420518BA900D24D24 /* InstagramViewController.swift */; };
 		0F145E9820518BA900D24D24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F145E9620518BA900D24D24 /* Main.storyboard */; };
 		0F145E9A20518BA900D24D24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F145E9920518BA900D24D24 /* Assets.xcassets */; };
 		0F145E9D20518BA900D24D24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F145E9B20518BA900D24D24 /* LaunchScreen.storyboard */; };
-		0F145EA520518C4D00D24D24 /* CornerpointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F145EA420518C4D00D24D24 /* CornerpointView.swift */; };
-		0F145EA720518CA800D24D24 /* CroppableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F145EA620518CA800D24D24 /* CroppableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F145E8F20518BA900D24D24 /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F145E9220518BA900D24D24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F145E9420518BA900D24D24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F145E9420518BA900D24D24 /* InstagramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramViewController.swift; sourceTree = "<group>"; };
 		0F145E9720518BA900D24D24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F145E9920518BA900D24D24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F145E9C20518BA900D24D24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F145E9E20518BA900D24D24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F145EA420518C4D00D24D24 /* CornerpointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerpointView.swift; sourceTree = "<group>"; };
-		0F145EA620518CA800D24D24 /* CroppableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CroppableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				0F145E9220518BA900D24D24 /* AppDelegate.swift */,
-				0F145E9420518BA900D24D24 /* ViewController.swift */,
+				0F145E9420518BA900D24D24 /* InstagramViewController.swift */,
 				0F145E9620518BA900D24D24 /* Main.storyboard */,
 				0F145E9920518BA900D24D24 /* Assets.xcassets */,
 				0F145E9B20518BA900D24D24 /* LaunchScreen.storyboard */,
 				0F145E9E20518BA900D24D24 /* Info.plist */,
-				0F145EA420518C4D00D24D24 /* CornerpointView.swift */,
-				0F145EA620518CA800D24D24 /* CroppableImageView.swift */,
 			);
 			path = ImageCropper;
 			sourceTree = "<group>";
@@ -142,10 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F145E9520518BA900D24D24 /* ViewController.swift in Sources */,
-				0F145EA720518CA800D24D24 /* CroppableImageView.swift in Sources */,
+				0F145E9520518BA900D24D24 /* InstagramViewController.swift in Sources */,
 				0F145E9320518BA900D24D24 /* AppDelegate.swift in Sources */,
-				0F145EA520518C4D00D24D24 /* CornerpointView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

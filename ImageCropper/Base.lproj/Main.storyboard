@@ -6,44 +6,55 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Crop Delegate-->
+        <!--Instagram View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageCropper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InstagramViewController" customModule="ImageCropper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alA-LJ-KYD" customClass="CroppableImageView" customModule="ImageCropper" customModuleProvider="target">
-                                <rect key="frame" x="16" y="50" width="343" height="546"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="cropDelegate" destination="BYZ-38-t0r" id="b3a-Hx-ZsH"/>
-                                </connections>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-J5-IBs">
                                 <rect key="frame" x="164" y="617" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Crop"/>
                                 <connections>
-                                    <action selector="cropButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g1f-FN-FUi"/>
+                                    <action selector="cropTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cZj-oP-UcG"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuS-f7-UWl">
+                                <rect key="frame" x="16" y="80" width="343" height="257.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="gVi-Mx-JK6">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="257.5"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="top" secondItem="cuS-f7-UWl" secondAttribute="top" id="HBZ-Gs-pn3"/>
+                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="height" secondItem="cuS-f7-UWl" secondAttribute="height" id="KoZ-bs-CCQ"/>
+                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="width" secondItem="cuS-f7-UWl" secondAttribute="width" id="On5-cu-xKF"/>
+                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="leading" secondItem="cuS-f7-UWl" secondAttribute="leading" id="a4D-LS-0TO"/>
+                                    <constraint firstAttribute="width" secondItem="cuS-f7-UWl" secondAttribute="height" multiplier="4:3" id="e2W-yv-FHe"/>
+                                    <constraint firstAttribute="trailing" secondItem="gVi-Mx-JK6" secondAttribute="trailing" id="qxM-Vy-LnI"/>
+                                    <constraint firstAttribute="bottom" secondItem="gVi-Mx-JK6" secondAttribute="bottom" id="vrO-11-Wjz"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cuS-f7-UWl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="GH8-A1-xam"/>
+                            <constraint firstItem="cuS-f7-UWl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="J6B-Ue-jS4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cuS-f7-UWl" secondAttribute="trailing" constant="16" id="sW5-Vl-ppK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="5mV-KR-akb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="Dss-Jc-0Py">
-                            <connections>
-                                <action selector="openCamera:" destination="BYZ-38-t0r" id="eRu-Wu-GGm"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="Dss-Jc-0Py"/>
                         <barButtonItem key="rightBarButtonItem" title="Photos" id="dHS-ha-OUs">
                             <connections>
                                 <action selector="openPhotoLibrary:" destination="BYZ-38-t0r" id="L5L-k5-c3c"/>
@@ -51,8 +62,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cropButton" destination="Pbr-J5-IBs" id="Qmj-kD-b5D"/>
-                        <outlet property="cropView" destination="alA-LJ-KYD" id="BlO-DE-rPq"/>
+                        <outlet property="imageView" destination="gVi-Mx-JK6" id="Rpt-C6-mbl"/>
+                        <outlet property="imageViewHeight" destination="KoZ-bs-CCQ" id="QwC-nJ-LZa"/>
+                        <outlet property="imageViewWidth" destination="On5-cu-xKF" id="UWp-kx-Kyq"/>
+                        <outlet property="scrollView" destination="cuS-f7-UWl" id="2Sj-pD-meH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,4 +91,7 @@
             <point key="canvasLocation" x="-196" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dog" width="600" height="600"/>
+    </resources>
 </document>
