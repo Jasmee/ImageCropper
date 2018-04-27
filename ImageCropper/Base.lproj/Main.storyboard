@@ -19,37 +19,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbr-J5-IBs">
-                                <rect key="frame" x="164" y="617" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Crop"/>
-                                <connections>
-                                    <action selector="cropTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cZj-oP-UcG"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuS-f7-UWl">
-                                <rect key="frame" x="16" y="80" width="343" height="257.5"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="603"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="gVi-Mx-JK6">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="257.5"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="59P-GA-ife">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="603"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="top" secondItem="cuS-f7-UWl" secondAttribute="top" id="HBZ-Gs-pn3"/>
-                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="height" secondItem="cuS-f7-UWl" secondAttribute="height" id="KoZ-bs-CCQ"/>
-                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="width" secondItem="cuS-f7-UWl" secondAttribute="width" id="On5-cu-xKF"/>
-                                    <constraint firstItem="gVi-Mx-JK6" firstAttribute="leading" secondItem="cuS-f7-UWl" secondAttribute="leading" id="a4D-LS-0TO"/>
-                                    <constraint firstAttribute="width" secondItem="cuS-f7-UWl" secondAttribute="height" multiplier="4:3" id="e2W-yv-FHe"/>
-                                    <constraint firstAttribute="trailing" secondItem="gVi-Mx-JK6" secondAttribute="trailing" id="qxM-Vy-LnI"/>
-                                    <constraint firstAttribute="bottom" secondItem="gVi-Mx-JK6" secondAttribute="bottom" id="vrO-11-Wjz"/>
+                                    <constraint firstItem="59P-GA-ife" firstAttribute="centerX" secondItem="cuS-f7-UWl" secondAttribute="centerX" id="AMi-lN-Wne"/>
+                                    <constraint firstItem="59P-GA-ife" firstAttribute="top" secondItem="cuS-f7-UWl" secondAttribute="top" id="IRd-31-Ori"/>
+                                    <constraint firstItem="59P-GA-ife" firstAttribute="centerY" secondItem="cuS-f7-UWl" secondAttribute="centerY" id="KiH-7b-n6F"/>
+                                    <constraint firstAttribute="trailing" secondItem="59P-GA-ife" secondAttribute="trailing" id="R2p-Rp-K2y"/>
+                                    <constraint firstItem="59P-GA-ife" firstAttribute="leading" secondItem="cuS-f7-UWl" secondAttribute="leading" id="xCX-dV-K8O"/>
+                                    <constraint firstAttribute="bottom" secondItem="59P-GA-ife" secondAttribute="bottom" id="zlw-iQ-of5"/>
                                 </constraints>
                             </scrollView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2f-Vw-NP8" customClass="CropAreaView" customModule="ImageCropper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="269" width="600" height="193"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvy-yH-0E3">
+                                <rect key="frame" x="283" y="593" width="34" height="30"/>
+                                <state key="normal" title="Crop"/>
+                                <connections>
+                                    <action selector="cropTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qk0-Up-lH4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cuS-f7-UWl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="GH8-A1-xam"/>
-                            <constraint firstItem="cuS-f7-UWl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="J6B-Ue-jS4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cuS-f7-UWl" secondAttribute="trailing" constant="16" id="sW5-Vl-ppK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j2f-Vw-NP8" secondAttribute="trailing" id="1H2-ek-8dl"/>
+                            <constraint firstItem="cuS-f7-UWl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5wG-Kq-iTf"/>
+                            <constraint firstItem="cuS-f7-UWl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ARO-bm-RHG"/>
+                            <constraint firstItem="j2f-Vw-NP8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="205" id="IB1-LQ-VbD"/>
+                            <constraint firstAttribute="trailing" secondItem="cuS-f7-UWl" secondAttribute="trailing" id="e1J-eP-cag"/>
+                            <constraint firstItem="cuS-f7-UWl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ozW-t1-l60"/>
+                            <constraint firstItem="j2f-Vw-NP8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:1" id="pLZ-ne-jXG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rvy-yH-0E3" secondAttribute="bottom" constant="44" id="px1-xN-RA0"/>
+                            <constraint firstItem="rvy-yH-0E3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rjG-MJ-NGP"/>
+                            <constraint firstItem="j2f-Vw-NP8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yQB-Yk-gSz"/>
+                            <constraint firstItem="j2f-Vw-NP8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yl4-KG-HZD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -62,9 +72,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="gVi-Mx-JK6" id="Rpt-C6-mbl"/>
-                        <outlet property="imageViewHeight" destination="KoZ-bs-CCQ" id="QwC-nJ-LZa"/>
-                        <outlet property="imageViewWidth" destination="On5-cu-xKF" id="UWp-kx-Kyq"/>
+                        <outlet property="cropAreaView" destination="j2f-Vw-NP8" id="bmv-Fo-p0y"/>
+                        <outlet property="imageView" destination="59P-GA-ife" id="5SQ-oX-gHO"/>
                         <outlet property="scrollView" destination="cuS-f7-UWl" id="2Sj-pD-meH"/>
                     </connections>
                 </viewController>
